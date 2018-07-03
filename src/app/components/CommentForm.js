@@ -1,17 +1,21 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const CommentAddForm = props => {
+const CommentForm = ({ commentValue: value, addFormChange, addComment }) => {
   return (
-    <form onSubmit={props.onAddClick}>
+    <form
+      onSubmit={event => {
+        event.preventDefault();
+        addComment(value);
+      }}
+    >
       <div className="form-group">
         <label htmlFor="commentInput">Dodaj komentarz:</label>
         <textarea
           className="form-control"
           id="commentInput"
           placeholder="Enter your comment.."
-          value={props.value}
-          onChange={props.getNewCommentValue}
+          value={value}
+          onChange={event => addFormChange(event.currentTarget.value)}
         />
       </div>
       <div className="d-flex justify-content-end">
@@ -23,10 +27,4 @@ const CommentAddForm = props => {
   );
 };
 
-CommentAddForm.propTypes = {
-  value: PropTypes.string.isRequired,
-  onAddClick: PropTypes.func.isRequired,
-  getNewCommentValue: PropTypes.func.isRequired
-};
-
-export default CommentAddForm;
+export default CommentForm;

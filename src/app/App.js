@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import '../css/App.css';
 import Article from './components/Article';
-import CommentsList from './components/CommentsList';
+import CommentsListContainer from './components/CommentsListContainer';
+import CommentFormContainer from './components/CommentFormContainer';
 
 class App extends Component {
   render() {
@@ -14,7 +15,9 @@ class App extends Component {
         </header>
         <Article />
         <hr />
-        <CommentsList />
+        <CommentsListContainer />
+        <hr />
+        <CommentFormContainer />
       </div>
     );
   }
