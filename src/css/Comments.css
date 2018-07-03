@@ -1,0 +1,16 @@
+.list-group-item small {
+  display: block; }
+
+.list-group-item a {
+  text-decoration: none;
+  transition: all .4s; }
+  .list-group-item a:hover {
+    color: #03cd3c; }
+
+.social {
+  font-size: 24px; }
+  .social i {
+    cursor: pointer;
+    transition: all .4s; }
+    .social i:hover {
+      color: #0556d0; }
